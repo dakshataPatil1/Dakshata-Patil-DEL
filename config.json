@@ -4,10 +4,10 @@
 		"icon": "images/iconSmall.png",
 		"category": "custom"
 	},
-	"type": "REST",
-	"lang": {
-		"en-US": {
-			"name": "Custom Activity Test Journey",
+	 "type": "REST",
+   	 "lang": {
+       	"en-US": {
+		 "name": "Custom Activity Test Journey",
 			"description": "A custom Journey Builder activity to send SMS."
          "TwilioMessage":"Test Adhoc SMS Activity"
 		}
