@@ -28,7 +28,8 @@
 	 	"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/execute"
 		}
 	},
-	"configurationArguments": {
+	 "configurationArguments": {
+      "applicationExtensionKey": "6637d026-84c0-4c9b-9624-06655b0c312e",
 		"save": {
 			"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/save",
       "verb": "POST",
