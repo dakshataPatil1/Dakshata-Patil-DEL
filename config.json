@@ -1,0 +1,98 @@
+{
+	"workflowApiVersion": "1.1",
+	"metaData": {
+		"icon": "images/iconSmall.png",
+		"category": "custom"
+	},
+	"type": "REST",
+	"lang": {
+		"en-US": {
+			"name": "Custom Activity Test Journey",
+			"description": "A custom Journey Builder activity to send SMS."
+         "TwilioMessage":"Test Adhoc SMS Activity"
+		}
+	},
+	"arguments": {
+		 "execute": {
+			  "inArguments": [
+        {
+           "ProtocolId": "Contact.Attribute.Test Custom Activity.Protocol Id",
+           "ToNumber": "Contact.Attribute.Test Custom Activity.ToNumber"
+			}
+      ],
+			"outArguments": [],
+			"timeout": 100000,
+			"retryCount": 1,
+			"retryDelay": 10000,
+			"concurrentRequests" : 5,
+			"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/execute"
+		}
+	},
+	"configurationArguments": {
+		"save": {
+			"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/save",
+      "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+		},
+		"publish": {
+			"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/publish",
+      "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+		},
+		"validate": {
+			"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/validate",
+      "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+		},
+		"stop": {
+			"url": "https://dakshata-patil-del.herokuapp.com/journeybuilder/stop",
+       "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+		}
+	},
+	"wizardSteps": [{
+		 "label": "Create SMS Message", "key": "step1"
+		},
+	],
+	"userInterfaces": {
+		"configModal": {
+			"height": 600,
+			"width": 800,
+			"fullscreen": false
+		}
+	},
+	"schema": {
+		"arguments": {
+			"execute": {
+				"inArguments": [{
+         "ToNumber": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "in"   
+                        }
+                    },
+                    {
+                        "ProtocolId": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "in"   
+					}
+				}
+        ],
+				"outArguments": []
+			}
+		}
+	}
+}
