@@ -1,0 +1,100 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+       "icon": "images/iconSmall.png",
+       "category": "custom"
+    },
+    "type": "REST",
+    "lang": {
+       "en-US": {
+           "name": "Test Adhoc SMS Activity",
+           "description": "Send SMS with Journey Builder",
+           "TwilioMessage":"test"
+       }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+                  "ProtocolId": "{{Contact.Attribute.Test Custom Activity.Protocol Id}}"
+                }               
+            ],
+            "outArguments": [],
+            "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/execute",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "c7ff090c-6290-4e8a-a1ab-ccfeed95b4bb",  
+       "save": {
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/save",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+       },
+       "publish": {
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/publish",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+       },
+       "validate": {
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/validate",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+       },
+       "stop": {
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/stop",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 2000
+       }
+    },
+    "wizardSteps": [
+       { "label": "Create SMS Message", "key": "step1" }
+    ],
+    "userInterfaces": {
+       "configModal": {
+           "height": 600,
+           "width": 800,
+           "fullscreen": false
+       }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "adhocText": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "in"   
+                        }
+                    },
+                    {
+                        "ProtocolId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "in"   
+                        }
+                    }     
+                  
+                ],
+                "outArguments": []
+            }
+        }
+    }
+}
